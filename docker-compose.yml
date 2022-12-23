@@ -15,7 +15,7 @@ services:
       TZ: Asia/Tokyo
   web:
     build: docker/python
-    command: ./wait-for-it.sh db:3306 --timeout=1 --strict -- python3 manage.py runserver 0.0.0.0:8000
+    command: ./wait-for-it.sh db:3306 --timeout=10 --strict -- python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - ./src:/code
     ports:
