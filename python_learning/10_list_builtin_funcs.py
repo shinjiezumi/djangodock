@@ -69,3 +69,7 @@ print(numbers)  # [5, 4, 3, 2, 1]
 sorted_numbers = sorted(numbers)
 print(sorted_numbers)  # [1, 2, 3, 4, 5]
 print(numbers)  # [5, 4, 3, 2, 1]. 降順のまま
+
+## copy でコピーが作成できる
+copied = numbers.copy()
+print(copied)
