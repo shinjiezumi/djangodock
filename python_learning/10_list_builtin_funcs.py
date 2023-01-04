@@ -73,3 +73,7 @@ print(numbers)  # [5, 4, 3, 2, 1]. 降順のまま
 ## copy でコピーが作成できる
 copied = numbers.copy()
 print(copied)
+
+## スライスでコピー作成もできる
+copied2 = numbers[:]
+print(copied2)
