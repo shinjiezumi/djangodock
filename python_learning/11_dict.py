@@ -1,4 +1,4 @@
-# dict
+# dict. 辞書
 score = {'math': 80, 'science': 50}
 print(type(score))  # <class 'dict'>
 

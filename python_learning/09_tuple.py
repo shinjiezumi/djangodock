@@ -1,4 +1,4 @@
-# tuple
+# tuple. タプル
 my_tuple1 = ()
 my_tuple2 = tuple()
 my_tuple3 = (1, True, False, 'Python')

@@ -1,4 +1,4 @@
-# set
+# set. 集合
 my_set = {1, 2, 3}
 print(type(my_set))  # <class 'set'>
 print(my_set)  # {1, 2, 3}

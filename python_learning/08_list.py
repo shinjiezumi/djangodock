@@ -1,4 +1,4 @@
-# list
+# list. 配列
 my_list = [1, True, False, 'Python']  # どんな型でも格納できる。別の型でもOK
 print(type(my_list))
 print(my_list)
