@@ -40,3 +40,37 @@ items = [
 for item in items:
     part, name = item
     print('{0}は{1}さんです'.format(part, name))
+
+# 繰り返し数を指定.
+# ジェネレーターオブジェクトともいい、一度に配列が作られるわけではなく毎回作成されるので、メモリ効率が良い
+for i in range(100):
+    print(i)
+
+# start, endを指定することも可能
+for i in range(1, 101):
+    print(i)
+
+# ステップも指定可能
+for i in range(1, 101, 2):
+    print(i)
+
+# 1から100までのリストを作成
+my_list = range(1, 101)  # python2まで
+my_list = list(range(1, 101))  # python3以降の書き方。パフォーマンス観点でリストを明示する必要がある
+
+# enumerate を使うとindexも返すことができる
+names = ['田中', '鈴木', '佐藤']
+for index, name in enumerate(names):
+    print('{0}番目は{1}'.format(index, name))
+
+# zip で複数のリストを並列にアクセスできる
+foods = ['納豆', 'ヨーグルト', 'チャーハン']
+juices = ['コーラ', 'コーヒー', 'カフェラテ']
+for food, juice in zip(foods, juices):
+    print(food, juice)
+
+# 要素数が異なる場合は、少ない方の配列分ループする
+foods = ['納豆', 'ヨーグルト', 'チャーハン']
+juices = ['コーラ', 'コーヒー']
+for food, juice in zip(foods, juices):
+    print(food, juice)
