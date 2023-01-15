@@ -55,4 +55,47 @@ def hello6(text, *, name='匿名'):
 
 hello6('こんにちは')
 hello6('こんにちは', name='太郎')
-hello6('こんにちは', '太郎')  # エラー
+
+
+# hello6('こんにちは', '太郎')  # エラー
+
+
+# デフォルト引数の注意点
+# ミュータブルな型をデフォルト引数とした場合は使い回される
+def create_int_list(numbers=[]):
+    # 渡されたリストに0〜9の数値を加える
+    for i in range(10):
+        numbers.append(i)
+
+    return numbers
+
+
+numbers = create_int_list([1, 2, 3])
+print(numbers)  # [1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]. OK
+
+numbers = create_int_list()
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]. OK
+
+numbers2 = create_int_list()
+print(numbers2)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]. NG
+
+numbers3 = create_int_list()
+print(numbers3)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]. NG
+
+
+# デフォルト引数にNone を指定し、初期化するコードにすると動作する
+def create_int_list2(numbers=None):
+    if numbers is None:
+        numbers = []
+
+    for i in range(10):
+        numbers.append(i)
+
+    return numbers
+
+
+numbers = create_int_list2()
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+numbers2 = create_int_list2()
+print(numbers2)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
