@@ -5,7 +5,7 @@ def file_write():
     こんばんは"""
 
     # ファイルを開く
-    file = open('hello.txt', 'w', encoding='utf-8')
+    file = open('../hello.txt', 'w', encoding='utf-8')
 
     # ファイルに書き込み
     file.write(text)
@@ -15,7 +15,7 @@ def file_write():
 
     # 追記モードで開く
     text = '追記'
-    file = open('hello.txt', 'a', encoding='utf-8')
+    file = open('../hello.txt', 'a', encoding='utf-8')
     file.write(text)
     file.close()
 
@@ -23,12 +23,12 @@ def file_write():
     # file = open('hello.txt', 'a', encoding='utf-8')
 
     # with を使うとcloseが不要になるので、基本的にこれを使う
-    with open('hello.txt', 'w', encoding='utf-8') as file:
+    with open('../hello.txt', 'w', encoding='utf-8') as file:
         file.write(text)
 
 
 def file_read():
-    with open('hello.txt', 'r', encoding='utf-8') as file:
+    with open('../hello.txt', 'r', encoding='utf-8') as file:
         # 一気に読む
         src = file.read()
         print(src)
