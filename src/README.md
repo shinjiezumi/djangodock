@@ -12,6 +12,13 @@
 python manage.py startapp myapp
 ```
 
+## モデル作成・マイグレーション実行
+
+```shell
+python manage.py makemigrations diary
+python manage.py migrate
+```
+
 # ソース説明
 
 ## manage.py
