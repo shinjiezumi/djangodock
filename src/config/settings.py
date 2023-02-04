@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djandock',
+        'NAME': 'djangodock',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'db',
         'PORT': 3306,
+        'OPTIONS': {
+            'charset': 'utf8mb4'
+        }
     }
 }
 
