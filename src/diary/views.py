@@ -59,3 +59,13 @@ def delete(request, pk):
         'day': day
     }
     return render(request, 'diary/day_confirm_delete.html', context)
+
+
+def detail(request, pk):
+    # pkを元に日記を取得
+    day = get_object_or_404(Day, pk=pk)
+
+    context = {
+        'day': day
+    }
+    return render(request, 'diary/day_detail.html', context)
