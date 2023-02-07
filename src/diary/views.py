@@ -76,6 +76,7 @@ def detail(request, pk):
 # クラスビュー版
 class IndexView(generic.ListView):
     model = Day
+    paginate_by = 3
 
 
 class AddView(generic.CreateView):
