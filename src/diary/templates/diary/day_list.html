@@ -21,8 +21,10 @@
         <td>{{ day.date }}</td>
         {% if user.is_superuser %}
         <!-- 管理ユーザだけ表示する-->
-        <td><a href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">更新</a></td>
-        <td><a href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">削除</a></td>
+        <!--        <td><a href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">更新</a></td>-->
+        <!--        <td><a href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">削除</a></td>-->
+        <td><a href="{% url 'diary:update' day.pk %}" target="_blank">更新</a></td>
+        <td><a href="{% url 'diary:delete' day.pk %}" target="_blank">削除</a></td>
         {% endif %}
     </tr>
     {% endfor %}
