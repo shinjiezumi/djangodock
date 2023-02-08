@@ -19,6 +19,12 @@ python manage.py makemigrations diary
 python manage.py migrate
 ```
 
+## 管理ユーザ作成
+
+```shell
+python manage.py createsuperuser
+```
+
 # ソース説明
 
 ## manage.py
