@@ -6,6 +6,12 @@
 
 # コマンド
 
+## プロジェクトの作成
+
+```shell
+django-admin startproject myproject
+```
+
 ## アプリを作成
 
 ```shell
