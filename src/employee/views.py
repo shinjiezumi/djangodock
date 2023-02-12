@@ -6,6 +6,7 @@ from .models import Employee
 
 class IndexView(generic.ListView):
     model = Employee
+    paginate_by = 1
 
     def get_context_data(self):
         context = super().get_context_data()
