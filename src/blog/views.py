@@ -6,6 +6,7 @@ from .models import Post
 
 class IndexView(generic.ListView):
     model = Post
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = Post.objects.order_by('-created_at')
