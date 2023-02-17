@@ -36,3 +36,6 @@ class CategoryView(generic.ListView):
         category_pk = self.kwargs['pk']  # 指定されたカテゴリID取得
         queryset = Post.objects.order_by('-created_at').filter(category__pk=category_pk)  # 絞り込み
         return queryset
+
+class DetailView(generic.DetailView):
+    model = Post
