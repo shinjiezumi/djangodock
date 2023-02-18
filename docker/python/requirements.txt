@@ -3,3 +3,8 @@ mysqlclient
 requests
 bs4
 pillow
+numpy
+pytz
+scikit-learn
+scipy
+pandas
