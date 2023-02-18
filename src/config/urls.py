@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
@@ -21,5 +23,10 @@ urlpatterns = [
     path('myapp/', include('myapp.urls')),
     path('diary/', include('diary.urls')),
     path('employee/', include('employee.urls')),
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('videos/', include('videos.urls')),
 ]
+
+# 開発環境のみ、Djangoアプリケーション側でメディアファイルを配信する
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
