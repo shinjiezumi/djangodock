@@ -25,6 +25,7 @@ urlpatterns = [
     path('employee/', include('employee.urls')),
     path('blog/', include('blog.urls')),
     path('videos/', include('videos.urls')),
+    path('mnist/', include('mnist.urls')),
 ]
 
 # 開発環境のみ、Djangoアプリケーション側でメディアファイルを配信する

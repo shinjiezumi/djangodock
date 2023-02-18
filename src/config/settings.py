@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'mnist.apps.MnistConfig',
     'videos.apps.VideosConfig',
     'blog.apps.BlogConfig',
     'employee.apps.EmployeeConfig',
