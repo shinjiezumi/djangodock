@@ -1,0 +1,47 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<h1>日記一覧</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>タイトル</th>
+        <th>日付</th>
+        {% if user.is_superuser %}
+        <!-- 管理ユーザだけ表示する-->
+        <th>#</th>
+        <th>#</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for day in day_list %}
+    <tr>
+        <td><a href="{% url 'diary:detail' day.pk %}">{{ day.title }}</a></td>
+        <td>{{ day.date }}</td>
+        {% if user.is_superuser %}
+        <!-- 管理ユーザだけ表示する-->
+        <!--        <td><a href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">更新</a></td>-->
+        <!--        <td><a href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">削除</a></td>-->
+        <td><a href="{% url 'diary:update' day.pk %}" target="_blank">更新</a></td>
+        <td><a href="{% url 'diary:delete' day.pk %}" target="_blank">削除</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<div>
+    {% include 'diary/page1.html' %}
+</div>
+<div>
+    {% include 'diary/page2.html' %}
+</div>
+<div>
+    {% include 'diary/page3.html' %}
+</div>
+<div>
+    {% include 'diary/page4.html' %}
+</div>
+
+{% endblock %}
